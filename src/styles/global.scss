@@ -5,11 +5,21 @@
   scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4, h5, h6, p, a {
+h1, h2, h3, h4, h5, h6, p {
   all: unset;
   color: $text-color;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   background: $bg-color;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -1,0 +1,12 @@
+@import "../../styles/variables";
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  background: $sub-alt-color;
+  border: none;
+  border-radius: 15px;
+  padding: 1em;
+}
