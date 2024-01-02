@@ -1,0 +1,15 @@
+@import "./variables";
+
+:root {
+  font-family: "Fira Code Light", sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  all: unset;
+  color: $foreground;
+}
+
+body {
+  background: $background;
+}
