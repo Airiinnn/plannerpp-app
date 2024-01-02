@@ -1,12 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Kanban from "./pages/Kanban";
-import Calendar from "./pages/Calendar";
+import Header from "./containers/Header/Header";
+import Kanban from "./views/Kanban/Kanban";
+import Calendar from "./views/Calendar/Calendar";
 
 function App() {
   return (
     <Router>
+      <Header />
+
       <Routes>
         <Route path="/">
           <Route index Component={Kanban} />
@@ -14,14 +17,6 @@ function App() {
           <Route path="/calendar" Component={Calendar} />
         </Route>
       </Routes>
-
-      <Link to="/calendar">
-        <p>To calendar</p>
-      </Link>
-
-      <Link to="/kanban">
-        <p>To kanban</p>
-      </Link>
     </Router>
   );
 }

@@ -1,0 +1,21 @@
+@import "../../styles/variables";
+
+.header {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__app-name {
+  color: $text-color;
+  font-weight: bold;
+}
+
+.header__app-name--pink {
+  color: $main-color;
+}
+
+.header__login {
+  color: $sub-color;
+}
