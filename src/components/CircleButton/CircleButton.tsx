@@ -15,3 +15,4 @@ function CircleButton({ clickHandler, text }: CircleButtonProps ) {
 }
 
 export default CircleButton;
+// Todo: Fix / find alternative

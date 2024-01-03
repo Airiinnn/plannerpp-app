@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+
+.kanban-column {
+  width: 24%;
+  height: 100%;
+}
+
+.kanban-column__header {
+  color: $main-color;
+  font-weight: bold;
+}
+
+.kanban-column__content {
+  border: none;
+  border-radius: 1em;
+  background: $sub-alt-color;
+}

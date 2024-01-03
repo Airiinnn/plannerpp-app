@@ -31,4 +31,4 @@ function Dropdown({ optionValues }: SelectProps) {
 }
 
 export default Dropdown;
-// Todo: Find suitable tag for name. Decide how to handle default.
+// Todo: Find suitable tag for name. Decide how to handle default. Fix / find alternative.

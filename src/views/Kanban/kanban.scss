@@ -1,0 +1,10 @@
+@import "../../styles/variables";
+
+.kanban-board {
+  width: 80%;
+  min-height: 60vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 1em;
+}
