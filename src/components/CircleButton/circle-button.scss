@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+
+.circle-button {
+  aspect-ratio: 1 / 1;
+  border: none;
+  border-radius: 50%;
+  background: $sub-color;
+  color: $sub-alt-color;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: $animation-duration;
+}
+
+.circle-button:hover {
+  background: $main-color;
+}
+
+.circle-button__text {
+  padding: 0.2em;
+}

@@ -1,8 +1,13 @@
 export interface NavbarLinkProps {
-  text: string,
-  redirectPath: string
+  text: string;
+  redirectPath: string;
 }
 
 export interface SelectProps {
-  optionValues: string[]
+  optionValues: string[];
+}
+
+export interface CircleButtonProps {
+  clickHandler: () => void;
+  text: string;
 }
