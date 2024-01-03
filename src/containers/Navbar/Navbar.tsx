@@ -11,6 +11,8 @@ function Navbar() {
       <Dropdown optionValues={["hello", "world"]} />
       <CircleButton clickHandler={() => alert("+")} text="+" />
 
+      <div className="navbar__spacer" />
+
       <NavbarLink text="Kanban" redirectPath="/kanban" />
       <NavbarLink text="Calendar" redirectPath="/calendar" />
     </div>

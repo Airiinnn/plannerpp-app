@@ -9,6 +9,10 @@
   transition: $animation-duration;
 }
 
+.dropdown__button:hover {
+  background: $main-color;
+}
+
 .dropdown__button--main {
   background: $main-color;
 }
