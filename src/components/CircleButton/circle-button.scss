@@ -5,13 +5,21 @@
   width: 1.2em;
   border: none;
   border-radius: 50%;
-  background: $sub-color;
-  color: $sub-alt-color;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: $animation-duration;
+}
+
+.circle-button--normal {
+  background: $sub-color;
+  color: $sub-alt-color;
+}
+
+.circle-button--invert {
+  background: $sub-alt-color;
+  color: $sub-color;
 }
 
 .circle-button:hover {

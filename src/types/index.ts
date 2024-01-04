@@ -10,6 +10,7 @@ export interface SelectProps {
 export interface CircleButtonProps {
   clickHandler: () => void;
   text: string;
+  invertColors?: boolean;
 }
 
 export interface KanbanColumnProps {
@@ -21,4 +22,8 @@ export interface KanbanCardProps {
   tag: string;
   endDate: string;
   startDate?: Date | null;
+}
+
+export interface TagbarProps {
+  tags: string[];
 }

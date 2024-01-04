@@ -1,7 +1,16 @@
 @import "../../styles/variables";
 
-.kanban-board {
+.kanban {
   width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+}
+
+.kanban-board {
+  width: 100%;
   min-height: 60vh;
   display: flex;
   align-items: flex-start;
