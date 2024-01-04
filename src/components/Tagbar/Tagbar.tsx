@@ -7,13 +7,16 @@ import CircleButton from "../CircleButton/CircleButton";
 function Tagbar({ tags }: TagbarProps) {
   return (
     <div className="tagbar">
+      <div className="tagbar__tag--selected">
+        <h2 className="tagbar__tag__text">CS1234</h2>
+      </div>
       {tags.map((tag: string) => (
-        <div className="tagbar__tag">
-          <h2 className="tagbar__tag__text" key={tag}>{tag}</h2>
+        <div className="tagbar__tag" key={tag}>
+          <h2 className="tagbar__tag__text">{tag}</h2>
         </div>
       ))}
 
-      <CircleButton clickHandler={() => alert("+")} text="+" invertColors={true} />
+      <CircleButton clickHandler={() => alert("+")} text="+" invertColors={true}/>
     </div>
   );
 }

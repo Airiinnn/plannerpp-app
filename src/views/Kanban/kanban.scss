@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 1em;
+  gap: 2em;
 }
 
 .kanban-board {
@@ -15,4 +15,5 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  gap: 0.6em;
 }

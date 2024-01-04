@@ -14,6 +14,7 @@ function KanbanColumn({ columnHeader }: KanbanColumnProps) {
         <KanbanCard title="Dummy thing" tag="CS2100" endDate="31-01-2024"/>
         <KanbanCard title="Dummy thing" tag="CS2100" endDate="31-01-2024"/>
         <KanbanCard title="Dummy thing" tag="CS2100" endDate="31-01-2024"/>
+        <KanbanCard title="Dummy thing" tag="CS2100" endDate="31-01-2024"/>
 
         <CircleButton clickHandler={() => alert("+")} text="+" />
       </div>

@@ -1,13 +1,13 @@
 @import "../../styles/variables";
 
 .tagbar {
-  background-color: $sub-color;
+  background: $sub-color;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.4em;
   border: none;
-  border-radius: 1em;
+  border-radius: 0.4em;
   padding: 0.4em;
 }
 
@@ -18,9 +18,10 @@
 }
 
 .tagbar__tag--selected {
-  padding: 0.2em;
-  border-radius: 0.6em;
+  padding: 0.3em;
+  border-radius: 0.3em;
   background: $main-color;
+  font-weight: bold;
 }
 
 .tagbar__tag:hover {
@@ -32,4 +33,5 @@
 .tagbar__tag__text {
   color: $sub-alt-color;
   transition: $animation-duration;
+  font-size: 0.9em;
 }

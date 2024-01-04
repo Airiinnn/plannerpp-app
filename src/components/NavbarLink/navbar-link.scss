@@ -5,6 +5,10 @@
   transition: $animation-duration;
 }
 
+.navbar-link__text--selected {
+  color: $main-color;
+}
+
 .navbar-link__text:hover {
   color: $text-color;
 }

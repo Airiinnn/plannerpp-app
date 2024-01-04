@@ -1,7 +1,7 @@
 @import "../../styles/variables";
 
 .kanban-column {
-  width: 24%;
+  flex-grow: 1;
   height: 100%;
 }
 
@@ -9,6 +9,7 @@
   color: $main-color;
   font-weight: bold;
   text-align: center;
+  margin-bottom: 0.4em;
 }
 
 .kanban-column__content {
@@ -17,7 +18,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 0.4em;
-  padding: 0.4em;
+  padding: 0.6em;
   border: none;
   border-radius: 0.6em;
   background: $sub-alt-color;
