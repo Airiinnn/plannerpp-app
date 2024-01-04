@@ -1,7 +1,8 @@
 @import "../../styles/variables";
 
 .circle-button {
-  aspect-ratio: 1 / 1;
+  height: 1.2em;
+  width: 1.2em;
   border: none;
   border-radius: 50%;
   background: $sub-color;
@@ -18,5 +19,4 @@
 }
 
 .circle-button__text {
-  padding: 0.2em;
 }

@@ -8,10 +8,17 @@
 .kanban-column__header {
   color: $main-color;
   font-weight: bold;
+  text-align: center;
 }
 
 .kanban-column__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.4em;
   border: none;
-  border-radius: 1em;
+  border-radius: 0.6em;
   background: $sub-alt-color;
 }

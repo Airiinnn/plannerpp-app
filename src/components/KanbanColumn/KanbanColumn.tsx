@@ -2,15 +2,20 @@ import React from "react";
 
 import "./kanban-column.scss";
 import { KanbanColumnProps } from "../../types";
+import KanbanCard from "../KanbanCard/KanbanCard";
+import CircleButton from "../CircleButton/CircleButton";
 
 function KanbanColumn({ columnHeader }: KanbanColumnProps) {
   return (
     <div className="kanban-column">
       <h2 className="kanban-column__header">{columnHeader}</h2>
+
       <div className="kanban-column__content">
-        <h2>Dummy thing</h2>
-        <h2>Dummy thing</h2>
-        <h2>Dummy thing</h2>
+        <KanbanCard title="Dummy thing" tag="CS2100" endDate="31-01-2024"/>
+        <KanbanCard title="Dummy thing" tag="CS2100" endDate="31-01-2024"/>
+        <KanbanCard title="Dummy thing" tag="CS2100" endDate="31-01-2024"/>
+
+        <CircleButton clickHandler={() => alert("+")} text="+" />
       </div>
     </div>
   );

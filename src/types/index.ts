@@ -15,3 +15,10 @@ export interface CircleButtonProps {
 export interface KanbanColumnProps {
   columnHeader: string;
 }
+
+export interface KanbanCardProps {
+  title: string;
+  tag: string;
+  endDate: string;
+  startDate?: Date | null;
+}
