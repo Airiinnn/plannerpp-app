@@ -27,3 +27,8 @@ export interface KanbanCardProps {
 export interface TagbarProps {
   tags: string[];
 }
+
+export interface InputTitleProps {
+  name: string;
+  defaultValue: string;
+}
