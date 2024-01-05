@@ -32,3 +32,8 @@ export interface InputTitleProps {
   name: string;
   defaultValue: string;
 }
+
+export interface TextareaProps {
+  name: string;
+  defaultValue: string;
+}

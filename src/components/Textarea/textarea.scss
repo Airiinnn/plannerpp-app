@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+
+.textarea {
+  width: 100%;
+  display: flex;
+  font-size: 0.9em;
+}
+
+.textarea__label {
+  color: $text-color;
+  flex-grow: 1;
+}
+
+.textarea__input {
+  height: 30vh;
+  min-height: 360px;
+  flex-grow: 9;
+  background: none;
+  border: none;
+  color: $text-color;
+  resize: none;
+}
