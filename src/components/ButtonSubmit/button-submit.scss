@@ -1,0 +1,15 @@
+@import "../../styles/variables";
+
+.button-submit {
+  background: $sub-color;
+  color: $sub-alt-color;
+  border: none;
+  border-radius: 0.4em;
+  padding: 0.4em;
+  transition: $animation-duration;
+  cursor: pointer;
+}
+
+.button-submit:hover {
+  background: $main-color;
+}

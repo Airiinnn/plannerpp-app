@@ -37,3 +37,7 @@ export interface TextareaProps {
   name: string;
   defaultValue: string;
 }
+
+export interface ButtonSubmitProps {
+  text: string;
+}
