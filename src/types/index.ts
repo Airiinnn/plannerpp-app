@@ -33,6 +33,12 @@ export interface InputProps {
   defaultValue: string;
 }
 
+export interface InputSelectProps {
+  name: string;
+  defaultValue: string;
+  optionValues: string[];
+}
+
 export interface ButtonSubmitProps {
   text: string;
 }
