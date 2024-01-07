@@ -1,0 +1,14 @@
+@import "../../../../styles/variables";
+
+.navbar-link__text {
+  color: $sub-color;
+  transition: $animation-duration;
+}
+
+.navbar-link__text--selected {
+  color: $main-color;
+}
+
+.navbar-link__text:hover {
+  color: $text-color;
+}

@@ -1,0 +1,27 @@
+@import "../../../../styles/variables";
+
+.input-date {
+  width: 100%;
+  font-size: 0.9em;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  align-items: start;
+  justify-items: start;
+}
+
+.input-date__label {
+  color: $text-color;
+  grid-column: 1;
+}
+
+.input-date__input {
+  background: none;
+  border: $sub-color solid 2px;
+  border-radius: 0.4em;
+  color: $text-color;
+  grid-column: 2;
+}
+
+.input-date__input:focus {
+  outline: $main-color solid 1px;
+}

@@ -1,0 +1,46 @@
+@import "../../../styles/variables";
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal__form {
+  width: 30%;
+  min-width: 540px;
+  background: $sub-alt-color;
+  border-radius: 0.6em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+}
+
+.modal__form__header--left {
+  width: 90%;
+}
+
+.modal__close {
+  float: right;
+  color: $sub-color;
+  cursor: pointer;
+  transition: $animation-duration;
+}
+
+.modal__close:hover {
+  color: $text-color;
+}
+
+.divider {
+  border-top: 2px solid $bg-color;
+  margin: 0.6em 0;
+}
