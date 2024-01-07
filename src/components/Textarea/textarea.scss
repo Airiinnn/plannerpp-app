@@ -18,9 +18,15 @@
   height: 30vh;
   min-height: 360px;
   background: none;
-  border: none;
+  border: $sub-color solid 2px;
+  border-radius: 0.4em;
+  padding: 0 0.2em;
   color: $text-color;
   resize: none;
   grid-column: 2;
   justify-self: stretch;
+}
+
+.textarea__input:focus {
+  outline: $main-color solid 1px;
 }
