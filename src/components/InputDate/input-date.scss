@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-.textarea {
+.input-date {
   width: 100%;
   font-size: 0.9em;
   display: grid;
@@ -9,18 +9,14 @@
   justify-items: start;
 }
 
-.textarea__label {
+.input-date__label {
   color: $text-color;
   grid-column: 1;
 }
 
-.textarea__input {
-  height: 30vh;
-  min-height: 360px;
+.input-date__input {
   background: none;
   border: none;
   color: $text-color;
-  resize: none;
   grid-column: 2;
-  justify-self: stretch;
 }

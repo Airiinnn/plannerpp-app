@@ -21,19 +21,14 @@ export interface KanbanCardProps {
   title: string;
   tag: string;
   endDate: string;
-  startDate?: Date | null;
+  startDate?: string | null;
 }
 
 export interface TagbarProps {
   tags: string[];
 }
 
-export interface InputTitleProps {
-  name: string;
-  defaultValue: string;
-}
-
-export interface TextareaProps {
+export interface InputProps {
   name: string;
   defaultValue: string;
 }

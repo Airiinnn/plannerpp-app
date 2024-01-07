@@ -1,21 +1,22 @@
 import React from "react";
 
-import "./textarea.scss"
+import "./input-date.scss";
 import { InputProps } from "../../types";
 
 function capitalizeFirstLetter(text: string): string {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
-function Textarea({ name, defaultValue }: InputProps) {
+function InputDate({ name, defaultValue }: InputProps) {
   return (
-    <div className="textarea">
-      <label className="textarea__label">
+    <div className="input-date">
+      <label className="input-date__label">
         {capitalizeFirstLetter(name)}:
       </label>
 
-      <textarea
-        className="textarea__input"
+      <input
+        className="input-date__input"
+        type="date"
         name={name}
         defaultValue={defaultValue}
       />
@@ -23,4 +24,4 @@ function Textarea({ name, defaultValue }: InputProps) {
   );
 }
 
-export default Textarea;
+export default InputDate;
