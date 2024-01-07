@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "../features/ui/header/Header";
 import Navbar from "../features/ui/navbar/Navbar";
-import Kanban from "../pages/kanban/Kanban";
-import Calendar from "../pages/calendar/Calendar";
+import Kanban from "../features/kanban/Kanban";
+import Calendar from "../features/calendar/Calendar";
 
 function App() {
   return (

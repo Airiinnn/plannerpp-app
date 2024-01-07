@@ -1,18 +1,22 @@
 import React from "react";
 
 import "./modal.scss";
-import InputTitle from "./form/inputTitle/InputTitle";
-import Textarea from "./form/textarea/Textarea";
-import ButtonSubmit from "./form/buttonSubmit/ButtonSubmit";
-import InputDate from "./form/inputDate/InputDate";
-import InputSelect from "./form/inputSelect/InputSelect";
+import InputTitle from "./inputTitle/InputTitle";
+import Textarea from "./textarea/Textarea";
+import ButtonSubmit from "./buttonSubmit/ButtonSubmit";
+import InputDate from "./inputDate/InputDate";
+import InputSelect from "./inputSelect/InputSelect";
 
+import { useAppDispatch } from "../../../app/hooks";
+import { hideModal } from "./modalSlice";
 
 function submitHandler(event: React.FormEvent) {
   event.preventDefault();
 }
 
 function Modal() {
+  const dispatch = useAppDispatch();
+
   return (
     <div className="modal">
       <form
@@ -21,7 +25,12 @@ function Modal() {
       >
         <div className="modal__form__header">
           <InputTitle name="title" defaultValue="Sem start"/>
-          <span className="modal__close">&times;</span>
+          <span
+              className="modal__close"
+              onClick={() => dispatch(hideModal())}
+          >
+            &times;
+          </span>
         </div>
 
         <InputSelect name="status" defaultValue="To Do"
