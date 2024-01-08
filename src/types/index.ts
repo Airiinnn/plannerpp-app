@@ -1,3 +1,5 @@
+import {ReactNode} from "react";
+
 export interface NavbarLinkProps {
   text: string;
   redirectPath: string;
@@ -15,6 +17,7 @@ export interface CircleButtonProps {
 
 export interface KanbanColumnProps {
   columnHeader: string;
+  children: ReactNode;
 }
 
 export interface KanbanCardProps {
