@@ -1,8 +1,7 @@
 @import "../../../styles/variables";
 
 .kanban-column {
-  flex-grow: 1;
-  height: 100%;
+  width: 24%;
 }
 
 .kanban-column__header {

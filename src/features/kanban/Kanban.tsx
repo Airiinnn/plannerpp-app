@@ -8,17 +8,18 @@ import Modal from "../ui/modal/Modal";
 import KanbanCard from "./kanbanCard/KanbanCard";
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
-import { addColumnTaskId, removeColumnTaskId } from "./kanbanSlice";
+import { updateTaskStatus } from "./kanbanSlice";
 
 function Kanban() {
   const dispatch = useAppDispatch();
   const columns = useAppSelector((state) => state.kanban.columns);
+  const tasks = useAppSelector((state) => state.kanban.tasks);
   const modalIsShown = useAppSelector((state) => state.modal.isShown);
 
   const onDragEnd = (result: DropResult) => {
     const { source, destination, draggableId } = result;
 
-    // Dropeed outside of Droppable
+    // Dropped outside of Droppable
     if (!destination) {
       return;
     }
@@ -28,8 +29,7 @@ function Kanban() {
       return;
     }
 
-    dispatch(addColumnTaskId({"columnId": destination.droppableId, "taskId": draggableId}));
-    dispatch(removeColumnTaskId({"columnId": source.droppableId, "taskId": draggableId}));
+    dispatch(updateTaskStatus({taskId: draggableId, newStatus: destination.droppableId}));
   }
 
   return (
@@ -47,18 +47,21 @@ function Kanban() {
                   columnHeader="To Do"
                   provided={provided}
                 >
-                  {column.taskIds.map((taskId, index) => (
-                    <Draggable key={taskId} draggableId={taskId} index={index}>
-                      {(provided) => (
-                        <KanbanCard
-                          title={taskId}
-                          tag={taskId}
-                          endDate={taskId}
-                          provided={provided}
-                        />
-                      )}
-                    </Draggable>
-                  ))}
+                  {tasks
+                    .filter((task) => task.status === column.id)
+                    .map((task, index) => (
+                      <Draggable key={task.id} draggableId={task.id} index={index}>
+                        {(provided) => (
+                          <KanbanCard
+                            title={task.id}
+                            tag={task.id}
+                            endDate={task.id}
+                            provided={provided}
+                          />
+                        )}
+                      </Draggable>
+                    ))
+                  }
                 </KanbanColumn>
               )}
             </Droppable>

@@ -11,15 +11,16 @@ function KanbanColumn({ columnHeader, provided, children }: KanbanColumnProps) {
   const dispatch = useAppDispatch();
 
   return (
-    <div
-      className="kanban-column"
-      {...provided.droppableProps}
-      ref={provided.innerRef}
-    >
+    <div className="kanban-column">
       <h2 className="kanban-column__header">{columnHeader}</h2>
 
-      <div className="kanban-column__content">
+      <div
+        className="kanban-column__content"
+        {...provided.droppableProps}
+        ref={provided.innerRef}
+      >
         {children}
+        {provided.placeholder}
 
         <CircleButton clickHandler={() => dispatch(showModal())} text="+" />
       </div>

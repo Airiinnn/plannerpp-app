@@ -1,37 +1,45 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface ColumnTaskIdOperationPayload {
-  columnId: string;
+interface UpdateTaskStatusPayload {
   taskId: string;
+  newStatus: string;
 }
 
 const initialState = {
-  "tasks": [
-    { id: "task-1" },
-    { id: "task-2" },
-    { id: "task-3" },
-    { id: "task-4" }
+  tasks: [
+    {
+      id: "task-1",
+      status: "to-do"
+    },
+    {
+      id: "task-2",
+      status: "in-progress"
+    },
+    {
+      id: "task-3",
+      status: "in-review"
+    },
+    {
+      id: "task-4",
+      status: "completed"
+    }
   ],
-  "columns": [
+  columns: [
     {
       id: "to-do",
-      title: "To Do",
-      taskIds: ["task-1"]
+      title: "To Do"
     },
     {
       id: "in-progress",
-      title: "In Progress",
-      taskIds: ["task-2"]
+      title: "In Progress"
     },
     {
       id: "in-review",
-      title: "In Review",
-      taskIds: ["task-3"]
+      title: "In Review"
     },
     {
       id: "completed",
-      title: "Completed",
-      taskIds: ["task-4"]
+      title: "Completed"
     }
   ]
 }
@@ -40,21 +48,13 @@ export const kanbanSlice = createSlice({
   name: "kanban",
   initialState,
   reducers: {
-    addColumnTaskId: (state, action: PayloadAction<ColumnTaskIdOperationPayload>) => {
-      const { columnId, taskId } = action.payload;
-      const targetColumn = state.columns.find((column) => column.id === columnId);
-      targetColumn && targetColumn.taskIds.push(taskId);
-    },
-
-    removeColumnTaskId: (state, action: PayloadAction<ColumnTaskIdOperationPayload>) => {
-      const { columnId, taskId } = action.payload;
-      const targetColumn = state.columns.find((column) => column.id === columnId);
-      if (targetColumn) {
-        targetColumn.taskIds = targetColumn.taskIds.filter((id) => id !== taskId);
-      }
+    updateTaskStatus: (state, action: PayloadAction<UpdateTaskStatusPayload>) => {
+      const { taskId, newStatus } = action.payload;
+      const targetTask = state.tasks.find((task) => task.id === taskId);
+      targetTask && (targetTask.status = newStatus);
     }
   }
 })
 
-export const { addColumnTaskId, removeColumnTaskId } = kanbanSlice.actions;
+export const { updateTaskStatus } = kanbanSlice.actions;
 export default kanbanSlice.reducer;
