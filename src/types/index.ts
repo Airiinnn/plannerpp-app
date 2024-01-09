@@ -1,4 +1,5 @@
-import {ReactNode} from "react";
+import { ReactNode } from "react";
+import { DraggableProvided, DroppableProvided } from "react-beautiful-dnd";
 
 export interface NavbarLinkProps {
   text: string;
@@ -17,6 +18,7 @@ export interface CircleButtonProps {
 
 export interface KanbanColumnProps {
   columnHeader: string;
+  provided: DroppableProvided;
   children: ReactNode;
 }
 
@@ -25,6 +27,7 @@ export interface KanbanCardProps {
   tag: string;
   endDate: string;
   startDate?: string | null;
+  provided: DraggableProvided;
 }
 
 export interface TagbarProps {
