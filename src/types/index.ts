@@ -30,10 +30,6 @@ export interface KanbanCardProps {
   provided: DraggableProvided;
 }
 
-export interface TagbarProps {
-  tags: string[];
-}
-
 export interface InputProps {
   name: string;
   defaultValue: string;

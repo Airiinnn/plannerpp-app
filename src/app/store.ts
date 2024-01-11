@@ -2,11 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import kanbanReducer from "../features/kanban/kanbanSlice";
 import modalReducer from "../features/ui/modal/modalSlice";
+import tagbarSlice from "../features/ui/tagbar/tagbarSlice";
 
 export const store = configureStore({
   reducer: {
     kanban: kanbanReducer,
-    modal: modalReducer
+    modal: modalReducer,
+    tagbar: tagbarSlice
   }
 });
 

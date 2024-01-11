@@ -36,7 +36,7 @@ function Kanban() {
     <div className="kanban">
       {modalIsShown && <Modal />}
 
-      <Tagbar tags={["CS2100", "CS2030S", "CS2040S"]} />
+      <Tagbar />
 
       <DragDropContext onDragEnd={onDragEnd}>
         <div className="kanban-board">

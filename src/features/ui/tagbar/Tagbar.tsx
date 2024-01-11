@@ -1,22 +1,30 @@
 import React from "react";
 
 import "./tagbar.scss";
-import { TagbarProps } from "../../../types";
 import CircleButton from "../circleButton/CircleButton";
 
-function Tagbar({ tags }: TagbarProps) {
+import { useAppSelector, useAppDispatch } from "../../../app/hooks";
+import { toggleSelected } from "./tagbarSlice";
+
+function Tagbar() {
+  const dispatch = useAppDispatch();
+  const tags = useAppSelector((state) => state.tagbar.tags);
+
   return (
     <div className="tagbar">
-      <div className="tagbar__tag--selected">
-        <h2 className="tagbar__tag__text">CS1234</h2>
-      </div>
-      {tags.map((tag: string) => (
-        <div className="tagbar__tag" key={tag}>
-          <h2 className="tagbar__tag__text">{tag}</h2>
-        </div>
+      {tags.map((tag) => (
+        <h2
+          className={`tagbar__tag ${tag.selected && "tagbar__tag--selected"}`}
+          key={tag.title}
+          onClick={() => dispatch(toggleSelected(tag.title))}
+        >
+          {tag.title}
+        </h2>
       ))}
 
-      <CircleButton clickHandler={() => alert("+")} text="+" invertColors={true}/>
+      <CircleButton clickHandler={() => alert("+")} text="+" invertColors={true} />
+      <span className="tagbar__button-separator">/</span>
+      <CircleButton clickHandler={() => alert("-")} text="-" invertColors={true} />
     </div>
   );
 }
