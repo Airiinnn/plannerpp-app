@@ -5,6 +5,7 @@ interface UpdateTaskStatusPayload {
   newStatus: string;
 }
 
+// Todo: Temp initial state
 const initialState = {
   tasks: [
     {
@@ -22,24 +23,6 @@ const initialState = {
     {
       id: "task-4",
       status: "completed"
-    }
-  ],
-  columns: [
-    {
-      id: "to-do",
-      title: "To Do"
-    },
-    {
-      id: "in-progress",
-      title: "In Progress"
-    },
-    {
-      id: "in-review",
-      title: "In Review"
-    },
-    {
-      id: "completed",
-      title: "Completed"
     }
   ]
 }

@@ -2,8 +2,9 @@ import React from "react";
 import { DragDropContext, Draggable, Droppable, DropResult } from "react-beautiful-dnd";
 
 import "./kanban.scss";
+import { KANBAN_COLUMNS } from "../../constants";
 import KanbanColumn from "./kanbanColumn/KanbanColumn";
-import Tagbar from "./tagbar/Tagbar";
+import Tagbar from "../ui/tagbar/Tagbar";
 import Modal from "../ui/modal/Modal";
 import KanbanCard from "./kanbanCard/KanbanCard";
 
@@ -12,7 +13,6 @@ import { updateTaskStatus } from "./kanbanSlice";
 
 function Kanban() {
   const dispatch = useAppDispatch();
-  const columns = useAppSelector((state) => state.kanban.columns);
   const tasks = useAppSelector((state) => state.kanban.tasks);
   const modalIsShown = useAppSelector((state) => state.modal.isShown);
 
@@ -40,15 +40,15 @@ function Kanban() {
 
       <DragDropContext onDragEnd={onDragEnd}>
         <div className="kanban-board">
-          {columns.map((column) => (
-            <Droppable key={column.id} droppableId={column.id}>
+          {KANBAN_COLUMNS.map((column) => (
+            <Droppable key={column.columnId} droppableId={column.columnId}>
               {(provided) => (
                 <KanbanColumn
-                  columnHeader="To Do"
+                  columnHeader={column.columnTitle}
                   provided={provided}
                 >
                   {tasks
-                    .filter((task) => task.status === column.id)
+                    .filter((task) => task.status === column.columnId)
                     .map((task, index) => (
                       <Draggable key={task.id} draggableId={task.id} index={index}>
                         {(provided) => (

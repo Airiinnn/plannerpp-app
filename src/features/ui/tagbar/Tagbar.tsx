@@ -2,7 +2,7 @@ import React from "react";
 
 import "./tagbar.scss";
 import { TagbarProps } from "../../../types";
-import CircleButton from "../../ui/circleButton/CircleButton";
+import CircleButton from "../circleButton/CircleButton";
 
 function Tagbar({ tags }: TagbarProps) {
   return (

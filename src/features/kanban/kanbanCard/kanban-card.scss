@@ -6,8 +6,9 @@
   border-radius: 0.4em;
   background: $sub-color;
   padding: 0.4em;
-  transition: $animation-duration;
+  transition: opacity $animation-duration;
   cursor: pointer;
+  margin-bottom: 0.4em;
 }
 
 .kanban-card:hover {
