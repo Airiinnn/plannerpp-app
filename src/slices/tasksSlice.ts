@@ -10,6 +10,7 @@ const initialState = {
   tasks: [
     {
       id: "task-1",
+      title: "Homework 1",
       status: "to-do",
       tag: "CS2100",
       endDate: "2024-01-31",
@@ -18,6 +19,7 @@ const initialState = {
     },
     {
       id: "task-2",
+      title: "Homework 2",
       status: "in-progress",
       tag: "CS2100",
       endDate: "2024-01-31",
@@ -26,6 +28,7 @@ const initialState = {
     },
     {
       id: "task-3",
+      title: "Homework 3",
       status: "in-review",
       tag: "CS2100",
       endDate: "2024-01-31",
@@ -34,6 +37,7 @@ const initialState = {
     },
     {
       id: "task-4",
+      title: "Homework 4",
       status: "completed",
       tag: "CS2100",
       endDate: "2024-01-31",

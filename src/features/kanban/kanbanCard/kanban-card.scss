@@ -6,7 +6,7 @@
   border-radius: 0.4em;
   background: $sub-color;
   padding: 0.4em;
-  transition: opacity $animation-duration;
+  transition: background $animation-duration, color $animation-duration;
   cursor: pointer;
   margin-bottom: 0.4em;
 }

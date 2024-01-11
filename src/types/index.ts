@@ -23,10 +23,10 @@ export interface KanbanColumnProps {
 }
 
 export interface KanbanCardProps {
+  id: string;
   title: string;
   tag: string;
   endDate: string;
-  startDate?: string | null;
   provided: DraggableProvided;
 }
 

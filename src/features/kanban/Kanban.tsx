@@ -49,9 +49,10 @@ function Kanban() {
                       <Draggable key={task.id} draggableId={task.id} index={index}>
                         {(provided) => (
                           <KanbanCard
-                            title={task.id}
-                            tag={task.id}
-                            endDate={task.id}
+                            id={task.id}
+                            title={task.title}
+                            tag={task.tag}
+                            endDate={task.endDate}
                             provided={provided}
                           />
                         )}

@@ -11,6 +11,14 @@ function Tagbar() {
   const dispatch = useAppDispatch();
   const tags = useAppSelector((state) => state.tagbar.tags);
 
+  const showAddModalPayload = {
+    modalType: "tag-add"
+  }
+
+  const showDeleteModalPayload = {
+    modalType: "tag-delete"
+  }
+
   return (
     <div className="tagbar">
       {tags.map((tag) => (
@@ -23,9 +31,9 @@ function Tagbar() {
         </h2>
       ))}
 
-      <CircleButton clickHandler={() => dispatch(showModal("tag-add"))} text="+" invertColors={true} />
+      <CircleButton clickHandler={() => dispatch(showModal(showAddModalPayload))} text="+" invertColors={true} />
       <span className="tagbar__button-separator">/</span>
-      <CircleButton clickHandler={() => dispatch(showModal("tag-delete"))} text="-" invertColors={true} />
+      <CircleButton clickHandler={() => dispatch(showModal(showDeleteModalPayload))} text="-" invertColors={true} />
     </div>
   );
 }

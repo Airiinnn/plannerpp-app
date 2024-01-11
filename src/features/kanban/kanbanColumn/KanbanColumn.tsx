@@ -10,6 +10,10 @@ import { showModal } from "../../../slices/modalSlice";
 function KanbanColumn({ columnHeader, provided, children }: KanbanColumnProps) {
   const dispatch = useAppDispatch();
 
+  const showModalPayload = {
+    modalType: "task-add"
+  }
+
   return (
     <div className="kanban-column">
       <h2 className="kanban-column__header">{columnHeader}</h2>
@@ -22,7 +26,7 @@ function KanbanColumn({ columnHeader, provided, children }: KanbanColumnProps) {
         {children}
         {provided.placeholder}
 
-        <CircleButton clickHandler={() => dispatch(showModal("task-add"))} text="+" />
+        <CircleButton clickHandler={() => dispatch(showModal(showModalPayload))} text="+" />
       </div>
     </div>
   );
