@@ -5,7 +5,7 @@ import { KanbanColumnProps } from "../../../types";
 import CircleButton from "../../ui/circleButton/CircleButton";
 
 import { useAppDispatch } from "../../../app/hooks";
-import { showModal } from "../../ui/modal/modalSlice";
+import { showModal } from "../../../slices/modalSlice";
 
 function KanbanColumn({ columnHeader, provided, children }: KanbanColumnProps) {
   const dispatch = useAppDispatch();

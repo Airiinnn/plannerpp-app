@@ -3,10 +3,16 @@ import React from "react";
 import "./kanban-card.scss";
 import { KanbanCardProps } from "../../../types";
 
+import { useAppDispatch } from "../../../app/hooks";
+import { showModal } from "../../../slices/modalSlice";
+
 function KanbanCard({ title, tag, endDate, startDate = null, provided }: KanbanCardProps) {
+  const dispatch = useAppDispatch();
+
   return (
     <div
       className="kanban-card"
+      onClick={() => dispatch(showModal("task-update"))}
       {...provided.draggableProps}
       {...provided.dragHandleProps}
       ref={provided.innerRef}

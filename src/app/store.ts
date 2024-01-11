@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import kanbanReducer from "../features/kanban/kanbanSlice";
-import modalReducer from "../features/ui/modal/modalSlice";
-import tagbarSlice from "../features/ui/tagbar/tagbarSlice";
+import tasksReducer from "../slices/tasksSlice";
+import modalReducer from "../slices/modalSlice";
+import tagbarSlice from "../slices/tagbarSlice";
 
 export const store = configureStore({
   reducer: {
-    kanban: kanbanReducer,
+    tasks: tasksReducer,
     modal: modalReducer,
     tagbar: tagbarSlice
   }

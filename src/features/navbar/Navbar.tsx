@@ -1,8 +1,8 @@
 import React from "react"
 
 import "./navbar.scss";
-import CircleButton from "../circleButton/CircleButton";
-import Dropdown from "../dropdown/Dropdown";
+import CircleButton from "../ui/circleButton/CircleButton";
+import Dropdown from "../ui/dropdown/Dropdown";
 import NavbarLink from "./navbarLink/NavbarLink";
 
 function Navbar() {

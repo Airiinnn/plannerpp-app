@@ -1,11 +1,11 @@
 import React from "react";
 
 import "./tagbar.scss";
-import CircleButton from "../circleButton/CircleButton";
+import CircleButton from "../ui/circleButton/CircleButton";
 
-import { useAppSelector, useAppDispatch } from "../../../app/hooks";
-import { toggleSelected } from "./tagbarSlice";
-import { showModal } from "../modal/modalSlice";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { toggleSelected } from "../../slices/tagbarSlice";
+import { showModal } from "../../slices/modalSlice";
 
 function Tagbar() {
   const dispatch = useAppDispatch();

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "./navbar-link.scss";
-import { NavbarLinkProps } from "../../../../types";
+import { NavbarLinkProps } from "../../../types";
 
 function NavbarLink({ text, redirectPath }: NavbarLinkProps) {
   return (

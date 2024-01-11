@@ -4,15 +4,15 @@ import { DragDropContext, Draggable, Droppable, DropResult } from "react-beautif
 import "./kanban.scss";
 import { KANBAN_COLUMNS } from "../../constants";
 import KanbanColumn from "./kanbanColumn/KanbanColumn";
-import Tagbar from "../ui/tagbar/Tagbar";
+import Tagbar from "../tagbar/Tagbar";
 import KanbanCard from "./kanbanCard/KanbanCard";
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
-import { updateTaskStatus } from "./kanbanSlice";
+import { updateTaskStatus } from "../../slices/tasksSlice";
 
 function Kanban() {
   const dispatch = useAppDispatch();
-  const tasks = useAppSelector((state) => state.kanban.tasks);
+  const tasks = useAppSelector((state) => state.tasks.tasks);
 
   const onDragEnd = (result: DropResult) => {
     const { source, destination, draggableId } = result;

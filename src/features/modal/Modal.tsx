@@ -2,15 +2,15 @@ import React from "react";
 
 import "./modal.scss";
 
-import { useAppSelector, useAppDispatch } from "../../../app/hooks";
-import { hideModal } from "./modalSlice";
-import Form from "../form/Form";
-import InputTitle from "../form/inputTitle/InputTitle";
-import ButtonSubmit from "../form/buttonSubmit/ButtonSubmit";
-import InputSelect from "../form/inputSelect/InputSelect";
-import InputDate from "../form/inputDate/InputDate";
-import Divider from "../form/divider/Divider";
-import Textarea from "../form/textarea/Textarea";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { hideModal } from "../../slices/modalSlice";
+import Form from "../ui/form/Form";
+import InputTitle from "../ui/form/inputTitle/InputTitle";
+import ButtonSubmit from "../ui/form/buttonSubmit/ButtonSubmit";
+import InputSelect from "../ui/form/inputSelect/InputSelect";
+import InputDate from "../ui/form/inputDate/InputDate";
+import Divider from "../ui/form/divider/Divider";
+import Textarea from "../ui/form/textarea/Textarea";
 
 function Modal() {
   const dispatch = useAppDispatch();

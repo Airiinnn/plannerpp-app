@@ -2,12 +2,12 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "../features/ui/header/Header";
-import Navbar from "../features/ui/navbar/Navbar";
+import Navbar from "../features/navbar/Navbar";
 import Kanban from "../features/kanban/Kanban";
 import Calendar from "../features/calendar/Calendar";
 
 import { useAppSelector } from "./hooks";
-import Modal from "../features/ui/modal/Modal";
+import Modal from "../features/modal/Modal";
 
 function App() {
   const isModalShown = useAppSelector((state) => state.modal.isShown);
