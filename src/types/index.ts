@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import {FormEvent, ReactNode} from "react";
 import { DraggableProvided, DroppableProvided } from "react-beautiful-dnd";
 
 export interface NavbarLinkProps {
@@ -43,4 +43,9 @@ export interface InputSelectProps {
 
 export interface ButtonSubmitProps {
   text: string;
+}
+
+export interface FormProps {
+  submitHandler: (event: FormEvent) => void;
+  children: ReactNode;
 }

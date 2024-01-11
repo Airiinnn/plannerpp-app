@@ -6,12 +6,19 @@ import Navbar from "../features/ui/navbar/Navbar";
 import Kanban from "../features/kanban/Kanban";
 import Calendar from "../features/calendar/Calendar";
 
+import { useAppSelector } from "./hooks";
+import Modal from "../features/ui/modal/Modal";
+
 function App() {
+  const isModalShown = useAppSelector((state) => state.modal.isShown);
+
   return (
     <div className="app">
       <Router>
         <Header />
         <Navbar />
+
+        {isModalShown && <Modal />}
 
         <Routes>
           <Route path="/">

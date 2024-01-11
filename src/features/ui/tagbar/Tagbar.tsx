@@ -5,6 +5,7 @@ import CircleButton from "../circleButton/CircleButton";
 
 import { useAppSelector, useAppDispatch } from "../../../app/hooks";
 import { toggleSelected } from "./tagbarSlice";
+import { showModal } from "../modal/modalSlice";
 
 function Tagbar() {
   const dispatch = useAppDispatch();
@@ -22,9 +23,9 @@ function Tagbar() {
         </h2>
       ))}
 
-      <CircleButton clickHandler={() => alert("+")} text="+" invertColors={true} />
+      <CircleButton clickHandler={() => dispatch(showModal("tag-add"))} text="+" invertColors={true} />
       <span className="tagbar__button-separator">/</span>
-      <CircleButton clickHandler={() => alert("-")} text="-" invertColors={true} />
+      <CircleButton clickHandler={() => dispatch(showModal("tag-delete"))} text="-" invertColors={true} />
     </div>
   );
 }

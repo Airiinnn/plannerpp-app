@@ -5,7 +5,6 @@ import "./kanban.scss";
 import { KANBAN_COLUMNS } from "../../constants";
 import KanbanColumn from "./kanbanColumn/KanbanColumn";
 import Tagbar from "../ui/tagbar/Tagbar";
-import Modal from "../ui/modal/Modal";
 import KanbanCard from "./kanbanCard/KanbanCard";
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
@@ -14,7 +13,6 @@ import { updateTaskStatus } from "./kanbanSlice";
 function Kanban() {
   const dispatch = useAppDispatch();
   const tasks = useAppSelector((state) => state.kanban.tasks);
-  const modalIsShown = useAppSelector((state) => state.modal.isShown);
 
   const onDragEnd = (result: DropResult) => {
     const { source, destination, draggableId } = result;
@@ -34,8 +32,6 @@ function Kanban() {
 
   return (
     <div className="kanban">
-      {modalIsShown && <Modal />}
-
       <Tagbar />
 
       <DragDropContext onDragEnd={onDragEnd}>

@@ -14,33 +14,33 @@
   background: rgba(0, 0, 0, 0.7);
 }
 
-.modal__form {
+.modal__content {
   width: 30%;
   min-width: 540px;
   background: $sub-alt-color;
   border-radius: 0.6em;
   padding: 1em;
+}
+
+.modal__content__header {
   display: flex;
-  flex-direction: column;
-  gap: 0.6em;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0.6em;
 }
 
-.modal__form__header--left {
-  width: 90%;
-}
-
-.modal__close {
-  float: right;
+.modal__content__title {
   color: $sub-color;
+  font-size: 0.9em;
+}
+
+.modal__content__close {
+  color: $sub-color;
+  font-size: 0.9em;
   cursor: pointer;
   transition: $animation-duration;
 }
 
-.modal__close:hover {
+.modal__content__close:hover {
   color: $text-color;
-}
-
-.divider {
-  border-top: 2px solid $bg-color;
-  margin: 0.6em 0;
 }

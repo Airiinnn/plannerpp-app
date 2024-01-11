@@ -22,7 +22,7 @@ function KanbanColumn({ columnHeader, provided, children }: KanbanColumnProps) {
         {children}
         {provided.placeholder}
 
-        <CircleButton clickHandler={() => dispatch(showModal())} text="+" />
+        <CircleButton clickHandler={() => dispatch(showModal("task-add"))} text="+" />
       </div>
     </div>
   );
