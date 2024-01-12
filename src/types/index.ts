@@ -16,6 +16,10 @@ export interface CircleButtonProps {
   invertColors?: boolean;
 }
 
+export interface ViewProps {
+  children: ReactNode;
+}
+
 export interface KanbanColumnProps {
   columnHeader: string;
   provided: DroppableProvided;

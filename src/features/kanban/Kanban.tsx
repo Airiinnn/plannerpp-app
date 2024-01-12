@@ -6,7 +6,6 @@ import { KANBAN_COLUMNS } from "../../constants";
 import {Task, Tag, Column} from "../../types";
 
 import KanbanColumn from "./kanbanColumn/KanbanColumn";
-import Tagbar from "../tagbar/Tagbar";
 import KanbanCard from "./kanbanCard/KanbanCard";
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
@@ -68,15 +67,11 @@ function Kanban() {
   );
 
   return (
-    <div className="kanban">
-      <Tagbar />
-
-      <DragDropContext onDragEnd={onDragEnd}>
-        <div className="kanban-board">
-          {KANBAN_COLUMNS.map((column) => renderDroppableColumn(tasks, column, tags))}
-        </div>
-      </DragDropContext>
-    </div>
+    <DragDropContext onDragEnd={onDragEnd}>
+      <div className="kanban">
+        {KANBAN_COLUMNS.map((column) => renderDroppableColumn(tasks, column, tags))}
+      </div>
+    </DragDropContext>
   );
 }
 

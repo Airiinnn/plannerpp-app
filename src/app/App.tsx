@@ -8,6 +8,7 @@ import Calendar from "../features/calendar/Calendar";
 
 import { useAppSelector } from "./hooks";
 import Modal from "../features/modal/Modal";
+import View from "../features/view/View";
 
 function App() {
   const isModalShown = useAppSelector((state) => state.modal.isShown);
@@ -20,11 +21,13 @@ function App() {
 
         {isModalShown && <Modal />}
 
-        <Routes>
-          <Route path="/kanban" Component={Kanban} />
-          <Route path="/calendar" Component={Calendar} />
-          <Route path="*" element={<Navigate to="/kanban" replace />} />
-        </Routes>
+        <View>
+          <Routes>
+            <Route path="/kanban" Component={Kanban} />
+            <Route path="/calendar" Component={Calendar} />
+            <Route path="*" element={<Navigate to="/kanban" replace />} />
+          </Routes>
+        </View>
       </Router>
     </div>
   );

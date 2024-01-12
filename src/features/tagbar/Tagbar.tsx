@@ -7,7 +7,7 @@ import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { toggleSelected } from "../../slices/tagbarSlice";
 import { showModal } from "../../slices/modalSlice";
 
-// Todo: Overflow behavior, button icons
+// Todo: button icons
 function Tagbar() {
   const dispatch = useAppDispatch();
   const tags = useAppSelector((state) => state.tagbar.tags);

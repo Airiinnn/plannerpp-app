@@ -22,9 +22,9 @@ function KanbanCard({ id, title, tag, endDate, provided }: KanbanCardProps) {
       {...provided.dragHandleProps}
       ref={provided.innerRef}
     >
-      <h2 className="kanban-card__title">{title}</h2>
-      <h3 className="kanban-card__tag">{tag}</h3>
-      <h3 className="kanban-card__date">Deadline: <span className="kanban-card__date--bold">{endDate}</span></h3>
+      <h2 className="kanban-card__text kanban-card__title">{title}</h2>
+      <h3 className="kanban-card__text kanban-card__tag">{tag}</h3>
+      <h3 className="kanban-card__text kanban-card__date">End: <span className="kanban-card__date--bold">{endDate}</span></h3>
     </div>
   );
 }
