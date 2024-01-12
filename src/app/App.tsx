@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 
 import Header from "../features/ui/header/Header";
 import Navbar from "../features/navbar/Navbar";
@@ -21,11 +21,9 @@ function App() {
         {isModalShown && <Modal />}
 
         <Routes>
-          <Route path="/">
-            <Route index Component={Kanban} />
-            <Route path="/kanban" Component={Kanban} />
-            <Route path="/calendar" Component={Calendar} />
-          </Route>
+          <Route path="/kanban" Component={Kanban} />
+          <Route path="/calendar" Component={Calendar} />
+          <Route path="*" element={<Navigate to="/kanban" replace />} />
         </Routes>
       </Router>
     </div>

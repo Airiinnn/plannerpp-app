@@ -13,8 +13,8 @@ function Navbar() {
 
       <div className="navbar__spacer" />
 
-      <NavbarLink text="Kanban" redirectPath="/kanban" />
-      <NavbarLink text="Calendar" redirectPath="/calendar" />
+      <NavbarLink title="Kanban" redirectPath="/kanban" />
+      <NavbarLink title="Calendar" redirectPath="/calendar" />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import {FormEvent, ReactNode} from "react";
 import { DraggableProvided, DroppableProvided } from "react-beautiful-dnd";
 
 export interface NavbarLinkProps {
-  text: string;
+  title: string;
   redirectPath: string;
 }
 
