@@ -49,3 +49,23 @@ export interface FormProps {
   submitHandler: (event: FormEvent) => void;
   children: ReactNode;
 }
+
+export interface Task {
+  id: string;
+  title: string;
+  status: string;
+  tag: string;
+  endDate: string;
+  startDate: string;
+  details: string;
+}
+
+export interface Tag {
+  title: string;
+  selected: boolean;
+}
+
+export interface Column {
+  columnId: string;
+  columnTitle: string;
+}

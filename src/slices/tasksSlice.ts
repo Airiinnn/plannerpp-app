@@ -1,12 +1,18 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+import { Task } from "../types";
+
 interface UpdateTaskStatusPayload {
   taskId: string;
   newStatus: string;
 }
 
+interface TasksState {
+  tasks: Task[]
+}
+
 // Todo: Temp initial state
-const initialState = {
+const initialState: TasksState = {
   tasks: [
     {
       id: "task-1",
@@ -75,7 +81,7 @@ const initialState = {
       id: "task-8",
       title: "Homework 8",
       status: "completed",
-      tag: "",
+      tag: "Misc",
       endDate: "2024-01-31",
       startDate: "2024-01-15",
       details: "@NUS"

@@ -1,12 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+import { Tag } from "../types";
+
 interface TagbarState {
   tags: Tag[];
-}
-
-interface Tag {
-  title: string;
-  selected: boolean;
 }
 
 // Todo: Temp initial state
@@ -44,6 +41,10 @@ const initialState: TagbarState = {
       title: "LAJ1201",
       selected: false
     },
+    {
+      title: "Misc",
+      selected: false
+    }
   ]
 }
 

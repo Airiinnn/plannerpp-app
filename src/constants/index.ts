@@ -1,4 +1,6 @@
-export const KANBAN_COLUMNS = [
+import { Column } from "../types";
+
+export const KANBAN_COLUMNS: Column[] = [
   {
     columnId: "to-do",
     columnTitle: "To Do"
