@@ -13,6 +13,7 @@ import Textarea from "../ui/form/textarea/Textarea";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { hideModal } from "../../slices/modalSlice";
 
+// Todo: Form identifiers
 function Modal() {
   const dispatch = useAppDispatch();
   const modalType = useAppSelector((state) => state.modal.modalType);
@@ -41,7 +42,7 @@ function Modal() {
       case "tag-add":
         return (
           <Form submitHandler={(event) => null}>
-            <InputTitle name="title" defaultValue="Tag Title" />
+            <InputTitle name="title" defaultValue="New tag" />
             <ButtonSubmit text="Add" />
           </Form>
         );
@@ -49,8 +50,17 @@ function Modal() {
       case "tag-delete":
         return (
           <Form submitHandler={(event) => null}>
-            <InputTitle name="title" defaultValue="Tag Title" />
+            <InputTitle name="title" defaultValue="Tag to be deleted" />
             <ButtonSubmit text="Delete" />
+          </Form>
+        );
+
+      case "tag-update":
+        return (
+          <Form submitHandler={(event) => null}>
+            <InputTitle name="title" defaultValue="Tag to be renamed" />
+            <InputTitle name="new-title" defaultValue="New tag" />
+            <ButtonSubmit text="Update" />
           </Form>
         );
 

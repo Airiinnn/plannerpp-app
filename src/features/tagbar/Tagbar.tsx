@@ -7,17 +7,21 @@ import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { toggleSelected } from "../../slices/tagbarSlice";
 import { showModal } from "../../slices/modalSlice";
 
-// Todo: Overflow behavior
+// Todo: Overflow behavior, button icons
 function Tagbar() {
   const dispatch = useAppDispatch();
   const tags = useAppSelector((state) => state.tagbar.tags);
 
-  const showAddModalPayload = {
+  const showTagAddModalPayload = {
     modalType: "tag-add"
   }
 
-  const showDeleteModalPayload = {
+  const showTagDeleteModalPayload = {
     modalType: "tag-delete"
+  }
+
+  const showTagUpdateModalPayload = {
+    modalType: "tag-update"
   }
 
   return (
@@ -32,9 +36,11 @@ function Tagbar() {
         </h2>
       ))}
 
-      <CircleButton clickHandler={() => dispatch(showModal(showAddModalPayload))} text="+" invertColors={true} />
+      <CircleButton clickHandler={() => dispatch(showModal(showTagAddModalPayload))} text="+" invertColors={true} />
       <span className="tagbar__button-separator">/</span>
-      <CircleButton clickHandler={() => dispatch(showModal(showDeleteModalPayload))} text="-" invertColors={true} />
+      <CircleButton clickHandler={() => dispatch(showModal(showTagUpdateModalPayload))} text="r" invertColors={true} />
+      <span className="tagbar__button-separator">/</span>
+      <CircleButton clickHandler={() => dispatch(showModal(showTagDeleteModalPayload))} text="-" invertColors={true} />
     </div>
   );
 }
