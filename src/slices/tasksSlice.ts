@@ -43,6 +43,42 @@ const initialState = {
       endDate: "2024-01-31",
       startDate: "2024-01-15",
       details: "@NUS"
+    },
+    {
+      id: "task-5",
+      title: "Homework 5",
+      status: "to-do",
+      tag: "CS2030S",
+      endDate: "2024-01-31",
+      startDate: "2024-01-15",
+      details: "@NUS"
+    },
+    {
+      id: "task-6",
+      title: "Homework 6",
+      status: "in-progress",
+      tag: "CS2040S",
+      endDate: "2024-01-31",
+      startDate: "2024-01-15",
+      details: "@NUS"
+    },
+    {
+      id: "task-7",
+      title: "Homework 7",
+      status: "in-review",
+      tag: "LAJ1201",
+      endDate: "2024-01-31",
+      startDate: "2024-01-15",
+      details: "@NUS"
+    },
+    {
+      id: "task-8",
+      title: "Homework 8",
+      status: "completed",
+      tag: "",
+      endDate: "2024-01-31",
+      startDate: "2024-01-15",
+      details: "@NUS"
     }
   ]
 }

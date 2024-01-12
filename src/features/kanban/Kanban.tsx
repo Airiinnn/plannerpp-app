@@ -12,6 +12,7 @@ import { updateTaskStatus } from "../../slices/tasksSlice";
 
 function Kanban() {
   const dispatch = useAppDispatch();
+  const tagsState = useAppSelector((state) => state.tagbar.tags);
   const tasks = useAppSelector((state) => state.tasks.tasks);
 
   const onDragEnd = (result: DropResult) => {
@@ -44,7 +45,10 @@ function Kanban() {
                   provided={provided}
                 >
                   {tasks
-                    .filter((task) => task.status === column.columnId)
+                    .filter((task) => (
+                      task.status === column.columnId &&
+                      tagsState.find((tag) => tag.title === task.tag && tag.selected)
+                    ))
                     .map((task, index) => (
                       <Draggable key={task.id} draggableId={task.id} index={index}>
                         {(provided) => (
