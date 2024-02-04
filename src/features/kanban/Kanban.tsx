@@ -11,6 +11,39 @@ import KanbanCard from "./kanbanCard/KanbanCard";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { updateTaskStatus } from "../../slices/tasksSlice";
 
+const filterTasksByColumnAndTag = (task: Task, columnId: string, tags: Tag[]): boolean => {
+  return task.status === columnId && tags.find((tag) => tag.title === task.tag && tag.selected) !== undefined
+};
+
+const renderDroppableColumn = (tasks: Task[], column: Column, tags: Tag[]): ReactNode => (
+  <Droppable key={column.columnId} droppableId={column.columnId}>
+    {(provided) => (
+      <KanbanColumn
+        columnHeader={column.columnTitle}
+        provided={provided}
+      >
+        {tasks
+          .filter((task) => filterTasksByColumnAndTag(task, column.columnId, tags))
+          .map(renderDraggableTask)}
+      </KanbanColumn>
+    )}
+  </Droppable>
+);
+
+const renderDraggableTask = (task: Task, index: number): ReactNode => (
+  <Draggable key={task.id} draggableId={task.id} index={index}>
+    {(provided) => (
+      <KanbanCard
+        id={task.id}
+        title={task.title}
+        tag={task.tag}
+        endDate={task.endDate}
+        provided={provided}
+      />
+    )}
+  </Draggable>
+);
+
 function Kanban() {
   const dispatch = useAppDispatch();
 
@@ -32,39 +65,6 @@ function Kanban() {
 
     dispatch(updateTaskStatus({taskId: draggableId, newStatus: destination.droppableId}));
   }
-
-  const filterTasksByColumnAndTag = (task: Task, columnId: string, tags: Tag[]): boolean => {
-    return task.status === columnId && tags.find((tag) => tag.title === task.tag && tag.selected) !== undefined
-  };
-
-  const renderDroppableColumn = (tasks: Task[], column: Column, tags: Tag[]): ReactNode => (
-    <Droppable key={column.columnId} droppableId={column.columnId}>
-      {(provided) => (
-        <KanbanColumn
-          columnHeader={column.columnTitle}
-          provided={provided}
-        >
-          {tasks
-            .filter((task) => filterTasksByColumnAndTag(task, column.columnId, tags))
-            .map(renderDraggableTask)}
-        </KanbanColumn>
-      )}
-    </Droppable>
-  );
-
-  const renderDraggableTask = (task: Task, index: number): ReactNode => (
-    <Draggable key={task.id} draggableId={task.id} index={index}>
-      {(provided) => (
-        <KanbanCard
-          id={task.id}
-          title={task.title}
-          tag={task.tag}
-          endDate={task.endDate}
-          provided={provided}
-        />
-      )}
-    </Draggable>
-  );
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
